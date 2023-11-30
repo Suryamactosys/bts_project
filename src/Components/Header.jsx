@@ -156,7 +156,7 @@ function Header() {
                     my: 2,
                     color: "black",
                     display: "block",
-                    marginLeft: "70px",
+                    marginLeft: "55px",
                     fontWeight: "600",
                     fontSize: "22px",
                     textDecoration: "none",
