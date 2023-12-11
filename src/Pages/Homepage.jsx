@@ -6,9 +6,6 @@ import Footer from "../Components/Footer";
 import CloudService from "../Components/CloudService";
 import Process from "../Components/Process";
 // import Services from "../Components/Services";
-import Surya from "../Components/Surya";
-import { AuthProvider } from "../Components/AuthContext";
-import Demo from "../Components/Demo";
 
 const HomePage = () => {
   return (
@@ -16,15 +13,9 @@ const HomePage = () => {
       <Box>
         <Home />
       </Box>
-      {/* <AuthProvider>
-        <Surya />
-      </AuthProvider> */}
       <Box>
         <Product />
       </Box>
-      {/* <Box>
-        <Demo />
-      </Box> */}
       {/* <Box>
         <Services />
       </Box> */}
