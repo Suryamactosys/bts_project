@@ -1,14 +1,13 @@
-import { Box, Button, Typography } from "@mui/material";
-// import mobility from "../assets/Home/mobility.jpg";
-// import uiux from "../assets/Home/uiux.jpg";
-import Mobile from "../assets/Focus/Mobile1.png";
-// import Software from "../assets/Focus/Software.png";
+import { Box, Button, Typography, Grid } from "@mui/material";
 import Software3 from "../assets/Focus/Software3.png";
+import Mobile from "../assets/Focus/Mobile1.png";
 import styled from "@emotion/styled";
-// import Software from "../assets/Software.jpg";
 
 const ColorButton = styled(Button)(() => ({
   backgroundColor: "red",
+  alignItems: "center",
+  width: "200px",
+  height: "50px",
   "&:hover": {
     backgroundColor: "white",
     color: "red",
@@ -21,144 +20,125 @@ const Product = () => {
       sx={{
         textAlign: "center",
         backgroundColor: "#FFF2EF",
-        padding: "50px 0px 0px 0px",
+        paddingY: { xs: "50px", md: "80px" },
       }}>
-      <Box>
-        <Typography
-          // sx={{
-          //   color: "red",
-          //   fontSize: "32px",
-          //   fontWeight: "600",
-          //   fontFamily: "Poppins sans-serif",
-          //   textDecoration: "underline 3px solid red",
-          // }}
-          variant="h3">
-          Our Focus
-          {/* <hr style={{ width: "150px", marginLeft: "600px", color: "red" }} /> */}
-        </Typography>
-        {/* <Typography>Designed and developed by AI expert like you</Typography> */}
-      </Box>
-      <Box sx={{ display: "flex" }}>
-        <Box
+      <Typography
+        variant="h3"
+        sx={{
+          color: "red",
+          fontSize: { xs: "28px", md: "32px" },
+          fontFamily: "Poppins sans-serif",
+          marginBottom: { xs: "20px", md: "-200px" },
+        }}>
+        Our Focus
+      </Typography>
+      <Grid container spacing={2} justifyContent="center">
+        <Grid
+          item
+          xs={12}
+          md={6}
           sx={{
-            width: "50%",
             textAlign: "left",
             display: "flex",
-            padding: "0px 0px 0px 20px",
+            flexDirection: { xs: "column", md: "row" },
           }}>
-          <Box>
-            <img src={Software3} alt="" height={400} width={350} />
+          <Box
+            sx={{
+              width: { xs: "100%", md: "50%" },
+              marginBottom: { xs: "20px", md: 0 },
+              marginTop: { xs: "20px", md: "150px" },
+            }}>
+            <img
+              src={Software3}
+              alt=""
+              style={{ width: "100%", borderRadius: "8px" }}
+            />
           </Box>
-          <Box sx={{ paddingLeft: "20px", paddingTop: "90px" }}>
+          <Box
+            sx={{
+              width: { xs: "100%", md: "50%" },
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "center",
+              padding: "10px",
+            }}>
             <Typography
+              variant="h4"
               sx={{
                 color: "red",
-                fontSize: "26px",
+                fontSize: { xs: "24px", md: "26px" },
                 fontFamily: "Poppins sans-serif",
+                marginBottom: "15px",
               }}>
               Software Development
             </Typography>
             <Typography
               sx={{
                 fontFamily: "Poppins sans-serif",
-                fontSize: "18px",
-                padding: "10px 0px 10px 0px",
+                fontSize: { xs: "16px", md: "18px" },
+                marginBottom: "15px",
               }}>
               Software development is the process of designing, creating,
               testing, and maintaining different software applications.
             </Typography>
-            <Button>Learn More →</Button>
+            <ColorButton>Learn More →</ColorButton>
           </Box>
-        </Box>
-        <Box
+        </Grid>
+        <Grid
+          item
+          xs={12}
+          md={6}
           sx={{
-            width: "50%",
             textAlign: "left",
             display: "flex",
-            padding: "200px 20px 0px 0px",
+            flexDirection: { xs: "column", md: "row" },
+            marginTop: { xs: "20px", md: 0 },
           }}>
-          <Box sx={{ paddingTop: "90px" }}>
+          <Box
+            sx={{
+              width: { xs: "100%", md: "50%" },
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "center",
+              paddingTop: { xs: "80px", md: "300px" },
+              padding: "10px",
+            }}>
             <Typography
+              variant="h4"
               sx={{
                 color: "red",
-                fontSize: "26px",
+                fontSize: { xs: "24px", md: "26px" },
                 fontFamily: "Poppins sans-serif",
+                marginBottom: "15px",
               }}>
               Mobile Development
             </Typography>
             <Typography
               sx={{
                 fontFamily: "Poppins sans-serif",
-                fontSize: "18px",
-                padding: "10px 0px 10px 0px",
+                fontSize: { xs: "16px", md: "18px" },
+                marginBottom: "15px",
               }}>
               Mobile application development is the process of creating software
               applications that run on a mobile device, and a typical mobile
               computing resources.
             </Typography>
-            <ColorButton sx={{ color: "white" }}>Learn More →</ColorButton>
-            {/* <Button sx={{ color: "red" }}>Image and Video labeling →</Button>
-            <br />
-            <Button sx={{ color: "red" }}>Text Labeling →</Button> */}
+            <ColorButton sx={{ marginLeft: "0px" }}>Learn More →</ColorButton>
           </Box>
-          <Box sx={{ paddingLeft: "20px" }}>
+          <Box
+            sx={{
+              width: { xs: "100%", md: "50%" },
+              marginBottom: { xs: 0, md: 0 },
+              marginTop: { xs: "20px", md: "300px", lg: "300px" },
+            }}>
             <img
               src={Mobile}
               alt=""
-              height={400}
-              width={380}
-              style={{ backgroundColor: "#FFF2EF" }}
+              style={{ width: "100%", borderRadius: "8px" }}
             />
           </Box>
-        </Box>
-      </Box>
-      {/* <Box sx={{ display: "flex" }}>
-        <Box
-          sx={{
-            width: "50%",
-            textAlign: "left",
-            display: "flex",
-            padding: "50px 0px 0px 20px",
-          }}>
-          <Box>
-            <img src={mobility} alt="" height={200} width={350} />
-          </Box>
-          <Box sx={{ paddingLeft: "20px" }}>
-            <Typography sx={{ color: "red", fontSize: "26px" }}>
-              Mobility development
-            </Typography>
-            <Typography>
-              Software development is the process of designing, creating,
-              testing, and maintaining different software applications.
-            </Typography>
-            <Button sx={{ color: "red" }}>Learn More →</Button>
-          </Box>
-        </Box>
-        <Box
-          sx={{
-            width: "50%",
-            textAlign: "left",
-            display: "flex",
-            padding: "200px 20px 0px 0px",
-          }}>
-          <Box>
-            <Typography sx={{ color: "red", fontSize: "26px" }}>
-              UI/UX development
-            </Typography>
-            <Typography>
-              Mobile application development is the process of creating software
-              applications that run on a mobile device, and a typical mobile
-              computing resources.
-            </Typography>
-            <Button sx={{ color: "red" }}>Image and Video labeling →</Button>
-            <br />
-            <Button sx={{ color: "red" }}>Text Labeling →</Button>
-          </Box>
-          <Box sx={{ paddingLeft: "20px" }}>
-            <img src={uiux} alt="" height={200} width={350} />
-          </Box>
-        </Box>
-      </Box> */}
+        </Grid>
+      </Grid>
     </Box>
   );
 };

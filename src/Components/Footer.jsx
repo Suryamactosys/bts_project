@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { Box, Button, Grid, Typography } from "@mui/material";
+import { Box, Button, Typography } from "@mui/material";
 import "./Footer.css";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import TwitterIcon from "@mui/icons-material/Twitter";
@@ -9,20 +9,21 @@ import AddLocationAltIcon from "@mui/icons-material/AddLocationAlt";
 import PhoneIcon from "@mui/icons-material/Phone";
 import MailIcon from "@mui/icons-material/Mail";
 import { Link } from "react-router-dom";
-
-const ColorButton = styled(Button)(() => ({
-  color: "red",
+import { useTheme } from "@emotion/react";
+const ColorButton = styled(Button)({
   backgroundColor: "white",
-  borderRadius: "50px",
+  color: "red",
   height: "60px",
   width: "200px",
+  borderRadius: "30px",
   "&:hover": {
     backgroundColor: "#FF7E78",
     color: "white",
   },
-}));
+});
 
 const Footer = () => {
+  const theme = useTheme();
   return (
     <Box sx={{ backgroundColor: "#FFF2EF" }}>
       <Box sx={{ backgroundColor: "white", paddingTop: "50px" }}>
@@ -30,63 +31,42 @@ const Footer = () => {
           sx={{
             backgroundColor: "#FF7E78",
             borderRadius: "75px  0px 75px 0px",
-            padding: "30px 0px 30px 80px",
-            // marginLeft: "150px",
+            padding: "30px",
+            gap: "500px",
             display: "flex",
+            [theme.breakpoints.down("md")]: {
+              flexDirection: "column",
+              alignItems: "center",
+              textAlign: "center",
+              padding: "30px 20px",
+              gap: "0px",
+            },
           }}>
           <Box>
             <Typography
               sx={{
                 color: "white",
                 fontSize: "32px",
+                marginLeft: "50px",
                 fontFamily: "Poppins sans-serif",
+                marginBottom: theme.breakpoints.down("md") ? "15px" : 0,
               }}>
               Get Started with Us,
               <br />
-              <Typography
-                sx={{
-                  color: "white",
-                  fontSize: "28px",
-                  fontFamily: "Poppins sans-serif",
-                }}>
-                Find your Profesional Service
-              </Typography>
+              Find your Professional Service
             </Typography>
           </Box>
-          <Box sx={{ paddingLeft: "40%", paddingTop: "15px" }}>
+          <Box
+            sx={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "right",
+              marginTop: "20px",
+            }}>
             <ColorButton variant="contained">Get Started</ColorButton>
           </Box>
         </Box>
       </Box>
-      {/* <Box sx={{ backgroundColor: "white" }}>
-        <Grid container>
-          <Grid item xs={12}>
-            <Box
-              sx={{
-                backgroundColor: "#FF7E78",
-                borderRadius: "75px 0px 75px 0px",
-                padding: "30px 20px",
-                display: "flex",
-                flexDirection: "column",
-                // alignItems: "center",
-                // textAlign: "center",
-              }}>
-              <Typography
-                sx={{
-                  color: "white",
-                  fontSize: "32px",
-                  fontFamily: "Poppins sans-serif",
-                  marginBottom: "20px",
-                  textAlign: "left",
-                }}>
-                Get Started with Us, <br /> Find your Professional Service
-              </Typography>
-              <ColorButton variant="contained">Get Started</ColorButton>
-            </Box>
-          </Grid>
-        </Grid>
-      </Box> */}
-
       <Box>
         <Box className="footer-distributed">
           <Box className="footer-left">

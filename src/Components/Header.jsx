@@ -25,7 +25,7 @@ const pages = [
   { id: 5, name: "Contact", link: "/contact" },
 ];
 
-const ColorButton = styled(Button)(({ theme }) => ({
+const ColorButton = styled(Button)(() => ({
   backgroundColor: "White",
   border: "none",
   "&:hover": {
