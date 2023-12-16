@@ -1,6 +1,6 @@
 import Home from "../Components/Home";
-import Product from "../Components/Product";
 import { Box } from "@mui/material";
+import Product from "../Components/Product";
 import Test from "../Components/Test";
 import Footer from "../Components/Footer";
 import CloudService from "../Components/CloudService";

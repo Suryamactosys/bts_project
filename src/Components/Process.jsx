@@ -51,7 +51,7 @@
 //           sx={{
 //             display: "flex",
 //             gap: "100px",
-//             padding: "0px 50px 50px 150px",
+//             padding: "0px 50px 50px 185px",
 //           }}>
 //           <ColorBox sx={{ boxShadow: "5" }}>
 //             <Typography
@@ -130,7 +130,6 @@
 
 // export default Process;
 
-import React from "react";
 import styled from "@emotion/styled";
 import { Box, Typography, Grid } from "@mui/material";
 
@@ -143,6 +142,7 @@ const ColorTypography = styled(Typography)({
 const NewTypography = styled(Typography)({
   fontSize: "20px",
   color: "white",
+  marginTop: "20px",
 });
 
 const NewBox = styled(Box)({
@@ -151,6 +151,8 @@ const NewBox = styled(Box)({
   backgroundColor: "red",
   borderRadius: "50%",
   position: "absolute",
+  // marginTop: "-302px",
+  // marginLeft: "310px",
 });
 
 const ColorBox = styled(Box)({
@@ -225,7 +227,11 @@ const Process = () => {
         ))}
         {/* {[1, 2, 3].map((step, index) => (
           <Grid item key={index} xs={4}>
-            <NewBox sx={{ marginTop: "70px", boxShadow: "50px" }}>
+            <NewBox
+              sx={{
+                marginTop: { lg: "-302px", md: "", sm: "-940px" },
+                marginLeft: { lg: "310px", md: "", sm: "244px" },
+              }}>
               <NewTypography>{step}</NewTypography>
             </NewBox>
           </Grid>
