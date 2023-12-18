@@ -12,7 +12,6 @@ const ColorButton = styled(Button)(() => ({
   color: "#FFFFFF",
   height: "40px",
   borderRadius: "30px",
-  marginTop: "15px",
   "&:hover": {
     backgroundColor: "#FFFFFF",
     color: "#FF0000",
