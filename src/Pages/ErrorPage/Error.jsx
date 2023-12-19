@@ -2,7 +2,7 @@
 import { useNavigate } from "react-router-dom";
 
 //* SVG
-import Banner from "../../assets/error.png";
+import Banner from "../../assets/Error.png";
 
 //* mui components imports
 import Box from "@mui/material/Box";

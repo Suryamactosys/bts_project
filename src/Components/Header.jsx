@@ -68,8 +68,8 @@ function Header() {
             <Typography
               variant="h6"
               noWrap
-              component="a"
-              href="/"
+              component={Link}
+              to="/"
               sx={{
                 mr: 2,
                 display: { xs: "none", md: "flex" },
@@ -161,8 +161,8 @@ function Header() {
                     fontSize: "22px",
                     textDecoration: "none",
                   }}
-                  component="a"
-                  href={page.link}>
+                  component={Link}
+                  to={page.link}>
                   {page.name}
                 </Typography>
               ))}
