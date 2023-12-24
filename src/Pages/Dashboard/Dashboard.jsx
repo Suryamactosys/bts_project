@@ -1,10 +1,21 @@
-import { Box } from "@mui/material";
+import Sidebar from "./Sidebar";
+import Header from "./Header";
+import { Container, Grid } from "@mui/material";
+import { Outlet } from "react-router-dom";
 
 const Dashboard = () => {
   return (
-    <Box sx={{ textAlign: "center", paddingTop: "100px" }}>
-      <h1>This is Dashboard</h1>
-    </Box>
+    <Container>
+      <Header />
+      <Grid>
+        <Grid item xs={4} sx={{ paddingTop: "50px" }}>
+          <Sidebar />
+        </Grid>
+        <Grid item xs={8} sx={{ marginLeft: "100px" }}>
+          <Outlet />
+        </Grid>
+      </Grid>
+    </Container>
   );
 };
 
