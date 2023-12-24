@@ -1,12 +1,15 @@
 import { useState } from "react";
 import { Grid, TextField, Button, Typography, Paper } from "@mui/material";
 import axios from "axios";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
-const Login = () => {
+const UpdateProfile = () => {
   const [formData, setFormData] = useState({
+    name: "",
     email: "",
     password: "",
+    mobile: "",
+    address: "",
   });
 
   const [error, setError] = useState("");
@@ -24,22 +27,17 @@ const Login = () => {
     e.preventDefault();
 
     try {
-      const response = await axios.post(
-        "http://localhost:3001/user/login",
+      const response = await axios.patch(
+        "http://localhost:3001/user/update",
         formData
       );
-      console.log("Login API Response:", response.data);
-      // clear the feild after login
-      setFormData({
-        email: "",
-        password: "",
-      });
+      console.log("Update API Response:", response.data);
 
       navigate("/dashboard");
-      // You can handle the response accordingly (e.g., store user token, redirect, etc.)
+      // You can handle the response accordingly (e.g., show a success message, redirect, etc.)
     } catch (error) {
-      console.error("Login API Error:", error.response.data);
-      setError("Invalid email or password. Please try again.");
+      console.error("Update API Error:", error.response.data);
+      setError("Error updating profile. Please try again.");
       // Handle error (e.g., show an error message to the user)
     }
   };
@@ -53,9 +51,19 @@ const Login = () => {
       <Grid item xs={10} sm={8} md={6} lg={4}>
         <Paper elevation={3} style={{ padding: 20 }}>
           <Typography variant="h5" align="center" gutterBottom>
-            Login Form
+            Update Profile
           </Typography>
           <form onSubmit={handleSubmit}>
+            <TextField
+              label="Name"
+              variant="outlined"
+              name="name"
+              value={formData.name}
+              onChange={handleChange}
+              fullWidth
+              margin="normal"
+            />
+
             <TextField
               label="Email"
               variant="outlined"
@@ -75,7 +83,27 @@ const Login = () => {
               name="password"
               value={formData.password}
               onChange={handleChange}
-              required
+              fullWidth
+              margin="normal"
+            />
+
+            <TextField
+              label="Mobile"
+              variant="outlined"
+              type="tel"
+              name="mobile"
+              value={formData.mobile}
+              onChange={handleChange}
+              fullWidth
+              margin="normal"
+            />
+
+            <TextField
+              label="Address"
+              variant="outlined"
+              name="address"
+              value={formData.address}
+              onChange={handleChange}
               fullWidth
               margin="normal"
             />
@@ -96,15 +124,8 @@ const Login = () => {
               color="primary"
               fullWidth
               style={{ marginTop: 20 }}>
-              Login
+              Update Profile
             </Button>
-            <Grid container justifyContent="flex-end">
-              <Grid item>
-                <Link to="/register" variant="body2">
-                  Create An account? Sign Up
-                </Link>
-              </Grid>
-            </Grid>
           </form>
         </Paper>
       </Grid>
@@ -112,4 +133,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default UpdateProfile;

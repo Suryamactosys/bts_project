@@ -11,13 +11,17 @@ import Loader from "./Components/Loading/Loading";
 import Error from "./Pages/ErrorPage/Error";
 import Login from "./Pages/Login/Login";
 import Register from "./Pages/Login/Register";
+import Dashboard from "./Pages/Dashboard/Dashboard";
+import UserSettings from "./Pages/Dashboard/Settings/Settings";
+import UserProfile from "./Pages/Dashboard/Profile/Profile";
+import LogoutPage from "./Pages/Login/LogoutPage";
 
 function App() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchData = async () => {
-      await new Promise((resolve) => setTimeout(resolve, 2000));
+      await new Promise((resolve) => setTimeout(resolve, 1000));
       setLoading(false);
     };
 
@@ -46,9 +50,15 @@ function App() {
             <Route path="/products" element={<Products />}></Route>
             <Route path="/contact" element={<Contact />}></Route>
             <Route path="/login" element={<Login />}></Route>
+            <Route path="/logoutpage" element={<LogoutPage />}></Route>
             <Route path="/register" element={<Register />}></Route>
             <Route path="/faq" element={<FAQ />}></Route>
             <Route path="/*" element={<Error />}></Route>
+            <Route path="/dashboard" element={<Dashboard />}>
+              <Route path="settings" element={<UserSettings />} />
+              <Route path="profile" element={<UserProfile />} />
+              <Route path="products" element={<Products />} />
+            </Route>
           </Routes>
         </Box>
       )}

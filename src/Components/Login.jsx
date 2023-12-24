@@ -1,16 +1,15 @@
 import { useState } from "react";
 import { Grid, TextField, Button, Typography, Paper } from "@mui/material";
 import axios from "axios";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
-const Login = () => {
+const LoginForm = () => {
   const [formData, setFormData] = useState({
     email: "",
     password: "",
   });
 
   const [error, setError] = useState("");
-  const navigate = useNavigate();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -29,13 +28,6 @@ const Login = () => {
         formData
       );
       console.log("Login API Response:", response.data);
-      // clear the feild after login
-      setFormData({
-        email: "",
-        password: "",
-      });
-
-      navigate("/dashboard");
       // You can handle the response accordingly (e.g., store user token, redirect, etc.)
     } catch (error) {
       console.error("Login API Error:", error.response.data);
@@ -100,7 +92,7 @@ const Login = () => {
             </Button>
             <Grid container justifyContent="flex-end">
               <Grid item>
-                <Link to="/register" variant="body2">
+                <Link href="/login" variant="body2">
                   Create An account? Sign Up
                 </Link>
               </Grid>
@@ -112,4 +104,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default LoginForm;
