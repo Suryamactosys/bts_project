@@ -1,9 +1,10 @@
-import { Container, Typography } from "@mui/material";
+import { Container } from "@mui/material";
+import { Outlet } from "react-router-dom";
 
 const MainSection = () => {
   return (
-    <Container>
-      <Typography>This is main section</Typography>
+    <Container sx={{ paddingTop: "100px" }}>
+      <Outlet />
     </Container>
   );
 };

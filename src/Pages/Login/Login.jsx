@@ -2,6 +2,8 @@ import { useState } from "react";
 import { Grid, TextField, Button, Typography, Paper } from "@mui/material";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Login = () => {
   const [formData, setFormData] = useState({
@@ -29,6 +31,8 @@ const Login = () => {
         formData
       );
       console.log("Login API Response:", response.data);
+
+      toast.success("Login successful!");
       // clear the feild after login
       setFormData({
         email: "",
@@ -40,6 +44,7 @@ const Login = () => {
     } catch (error) {
       console.error("Login API Error:", error.response.data);
       setError("Invalid email or password. Please try again.");
+      toast.error("Invalid email or password. Please try again.");
       // Handle error (e.g., show an error message to the user)
     }
   };
@@ -106,6 +111,7 @@ const Login = () => {
               </Grid>
             </Grid>
           </form>
+          <ToastContainer />
         </Paper>
       </Grid>
     </Grid>

@@ -9,6 +9,8 @@ import {
   Paper,
 } from "@mui/material";
 import { Link } from "react-router-dom";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const genders = ["male", "female", "other"];
 
@@ -40,6 +42,7 @@ const Register = () => {
         formData
       );
       console.log("API Response:", response.data);
+      toast.success("Registration successful!");
 
       setFormData({
         name: "",
@@ -53,6 +56,7 @@ const Register = () => {
       // You can handle the response accordingly (e.g., show a success message, redirect, etc.)
     } catch (error) {
       console.error("API Error:", error);
+      toast.error("Enter Valid Email Or Email Already Register");
       // Handle error (e.g., show an error message to the user)
     }
   };
@@ -172,6 +176,7 @@ const Register = () => {
             </Grid>
           </form>
         </Paper>
+        <ToastContainer />
       </Grid>
     </Grid>
   );
