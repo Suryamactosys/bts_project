@@ -1,4 +1,12 @@
-import { Card, CardContent, Typography, Grid, CardMedia } from "@mui/material";
+import React from "react";
+import {
+  Card,
+  CardContent,
+  Typography,
+  Grid,
+  CardMedia,
+  Button,
+} from "@mui/material";
 
 const ProductCard = ({ product }) => {
   const {
@@ -12,6 +20,10 @@ const ProductCard = ({ product }) => {
   } = product;
 
   const discountedPrice = price - (price * discountPercentage) / 100;
+
+  const handleAddToCart = () => {
+    console.log(`Product added to cart: ${title}`);
+  };
 
   return (
     <Grid item xs={12} sm={6} md={4} lg={3}>
@@ -30,9 +42,9 @@ const ProductCard = ({ product }) => {
             {title}
           </Typography>
           <Typography color="textSecondary">{category}</Typography>
-          <Typography variant="body2" component="p">
+          {/* <Typography variant="body2" component="p">
             {description}
-          </Typography>
+          </Typography> */}
           <Typography variant="h6" color="primary">
             Price: ${price}
           </Typography>
@@ -45,6 +57,9 @@ const ProductCard = ({ product }) => {
           <Typography variant="subtitle2" color="textSecondary">
             Brand: {brand}
           </Typography>
+          <Button variant="contained" color="primary" onClick={handleAddToCart}>
+            Add to Cart
+          </Button>
         </CardContent>
       </Card>
     </Grid>
