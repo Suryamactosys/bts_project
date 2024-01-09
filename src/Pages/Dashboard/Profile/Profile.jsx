@@ -9,10 +9,7 @@ import {
   TableHead,
   TableRow,
   Paper,
-<<<<<<< HEAD
   Button,
-=======
->>>>>>> 7cc01da8de6fd910b89f58a72021f49925e1c6db
 } from "@mui/material";
 import Loader from "../../../Components/Loading/Loading";
 
@@ -34,7 +31,6 @@ const UserProfile = () => {
     fetchData();
   }, []);
 
-<<<<<<< HEAD
   // const handleStatusChange = (userId) => {
   //   // Update the user status locally (you can also send an API request to update on the server)
   //   setUsersData((prevUsersData) => {
@@ -94,8 +90,6 @@ const UserProfile = () => {
     }
   };
 
-=======
->>>>>>> 7cc01da8de6fd910b89f58a72021f49925e1c6db
   return (
     <Grid justifyContent="center" sx={{ margin: "0px", padding: "0px" }}>
       <Grid item xs={12} sm={10} md={8} lg={12}>
@@ -104,11 +98,7 @@ const UserProfile = () => {
             {usersData.length > 0 ? (
               <TableContainer component={Paper}>
                 <Table>
-<<<<<<< HEAD
                   <TableHead sx={{ backgroundColor: "#aaaa", color: "white" }}>
-=======
-                  <TableHead>
->>>>>>> 7cc01da8de6fd910b89f58a72021f49925e1c6db
                     <TableRow>
                       <TableCell>Name</TableCell>
                       <TableCell>Email</TableCell>
@@ -118,10 +108,7 @@ const UserProfile = () => {
                       <TableCell>Gender</TableCell>
                       <TableCell>Role</TableCell>
                       <TableCell>Status</TableCell>
-<<<<<<< HEAD
                       <TableCell>Actions</TableCell>
-=======
->>>>>>> 7cc01da8de6fd910b89f58a72021f49925e1c6db
                     </TableRow>
                   </TableHead>
                   <TableBody>
@@ -134,7 +121,6 @@ const UserProfile = () => {
                         <TableCell>{user.city}</TableCell>
                         <TableCell>{user.gender}</TableCell>
                         <TableCell>{user.role}</TableCell>
-<<<<<<< HEAD
                         <TableCell>
                           {user.status === 1 ? "Active" : "Inactive"}
                         </TableCell>
@@ -150,9 +136,6 @@ const UserProfile = () => {
                             {user.status === 1 ? "Active" : "Inactive"}
                           </Button>
                         </TableCell>
-=======
-                        <TableCell>{user.status}</TableCell>
->>>>>>> 7cc01da8de6fd910b89f58a72021f49925e1c6db
                       </TableRow>
                     ))}
                   </TableBody>

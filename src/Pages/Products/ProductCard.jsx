@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import React from "react";
 import {
   Card,
@@ -8,9 +7,6 @@ import {
   CardMedia,
   Button,
 } from "@mui/material";
-=======
-import { Card, CardContent, Typography, Grid, CardMedia } from "@mui/material";
->>>>>>> 7cc01da8de6fd910b89f58a72021f49925e1c6db
 
 const ProductCard = ({ product }) => {
   const {
@@ -25,13 +21,10 @@ const ProductCard = ({ product }) => {
 
   const discountedPrice = price - (price * discountPercentage) / 100;
 
-<<<<<<< HEAD
   const handleAddToCart = () => {
     console.log(`Product added to cart: ${title}`);
   };
 
-=======
->>>>>>> 7cc01da8de6fd910b89f58a72021f49925e1c6db
   return (
     <Grid item xs={12} sm={6} md={4} lg={3}>
       <Card>
@@ -64,12 +57,9 @@ const ProductCard = ({ product }) => {
           <Typography variant="subtitle2" color="textSecondary">
             Brand: {brand}
           </Typography>
-<<<<<<< HEAD
           <Button variant="contained" color="primary" onClick={handleAddToCart}>
             Add to Cart
           </Button>
-=======
->>>>>>> 7cc01da8de6fd910b89f58a72021f49925e1c6db
         </CardContent>
       </Card>
     </Grid>
