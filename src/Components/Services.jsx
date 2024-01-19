@@ -2,7 +2,7 @@ import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
-import { Box } from "@mui/material";
+import { Box, Button } from "@mui/material";
 import website from "../assets/New folder/website.png";
 import seo from "../assets/New folder/seo.png";
 import sketch from "../assets/New folder/sketch.jpg";
@@ -45,6 +45,7 @@ export default function Services() {
                 <Typography gutterBottom variant="h6" component="div">
                   Website Development
                 </Typography>
+                <Button sx={{ height: "30px" }}>Contact Us</Button>
               </CardContent>
             </Card>
             <Card sx={{ maxWidth: 200 }}>
@@ -57,6 +58,7 @@ export default function Services() {
                 <Typography gutterBottom variant="h6" component="div">
                   Graphics Designing
                 </Typography>
+                <Button sx={{ height: "30px" }}>Contact Us</Button>
               </CardContent>
             </Card>
             <Card sx={{ maxWidth: 200 }}>
@@ -69,18 +71,20 @@ export default function Services() {
                 <Typography gutterBottom variant="h6" component="div">
                   UI/UX web Designing
                 </Typography>
+                <Button sx={{ height: "30px" }}>Contact Us</Button>
               </CardContent>
             </Card>
             <Card sx={{ maxWidth: 200 }}>
               <CardMedia
                 sx={{ height: 110 }}
-                image={sketch}
+                image={bussness}
                 title="green iguana"
               />
               <CardContent>
                 <Typography gutterBottom variant="h6" component="div">
-                  Sketch Designing & Development
+                  Market Data Analysiling
                 </Typography>
+                <Button sx={{ height: "30px" }}>Contact Us</Button>
               </CardContent>
             </Card>
           </Box>
@@ -101,6 +105,7 @@ export default function Services() {
                 <Typography gutterBottom variant="h6" component="div">
                   Seo & Content Writing
                 </Typography>
+                <Button sx={{ height: "30px" }}>Contact Us</Button>
               </CardContent>
             </Card>
             <Card sx={{ maxWidth: 200 }}>
@@ -113,6 +118,7 @@ export default function Services() {
                 <Typography gutterBottom variant="h6" component="div">
                   Digital market planing
                 </Typography>
+                <Button sx={{ height: "30px" }}>Contact Us</Button>
               </CardContent>
             </Card>
             <Card sx={{ maxWidth: 200 }}>
@@ -125,18 +131,20 @@ export default function Services() {
                 <Typography gutterBottom variant="h6" component="div">
                   Bussness Market Planing
                 </Typography>
+                <Button sx={{ height: "30px" }}>Contact Us</Button>
               </CardContent>
             </Card>
             <Card sx={{ maxWidth: 200 }}>
               <CardMedia
                 sx={{ height: 110 }}
-                image={bussness}
+                image={sketch}
                 title="green iguana"
               />
               <CardContent>
                 <Typography gutterBottom variant="h6" component="div">
-                  Market Data Analysiling
+                  Sketch Designing & Development
                 </Typography>
+                <Button sx={{ height: "30px" }}>Contact Us</Button>
               </CardContent>
             </Card>
           </Box>
