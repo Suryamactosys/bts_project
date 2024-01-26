@@ -61,7 +61,7 @@ const UserProfile = () => {
       const response = await fetch(
         `http://localhost:3001/user/update/${userId}`,
         {
-          method: "PATCH", // or "PATCH" depending on your API design
+          method: "PATCH",
           headers: {
             "Content-Type": "application/json",
           },
@@ -93,61 +93,56 @@ const UserProfile = () => {
   return (
     <Grid justifyContent="center" sx={{ margin: "0px", padding: "0px" }}>
       <Grid item xs={12} sm={10} md={8} lg={12}>
-        <>
-          <>
-            {usersData.length > 0 ? (
-              <TableContainer component={Paper}>
-                <Table>
-                  <TableHead sx={{ backgroundColor: "#aaaa", color: "white" }}>
-                    <TableRow>
-                      <TableCell>Name</TableCell>
-                      <TableCell>Email</TableCell>
-                      <TableCell>Mobile</TableCell>
-                      <TableCell>Address</TableCell>
-                      <TableCell>City</TableCell>
-                      <TableCell>Gender</TableCell>
-                      <TableCell>Role</TableCell>
-                      <TableCell>Status</TableCell>
-                      <TableCell>Actions</TableCell>
-                    </TableRow>
-                  </TableHead>
-                  <TableBody>
-                    {usersData.map((user) => (
-                      <TableRow key={user._id}>
-                        <TableCell>{user.name}</TableCell>
-                        <TableCell>{user.email}</TableCell>
-                        <TableCell>{user.mobile}</TableCell>
-                        <TableCell>{user.address}</TableCell>
-                        <TableCell>{user.city}</TableCell>
-                        <TableCell>{user.gender}</TableCell>
-                        <TableCell>{user.role}</TableCell>
-                        <TableCell>
-                          {user.status === 1 ? "Active" : "Inactive"}
-                        </TableCell>
-                        <TableCell>
-                          <Button
-                            variant="outlined"
-                            onClick={() => handleStatusChange(user._id)}
-                            style={{
-                              backgroundColor:
-                                user.status === 1 ? "green" : "red",
-                              color: "white",
-                            }}>
-                            {user.status === 1 ? "Active" : "Inactive"}
-                          </Button>
-                        </TableCell>
-                      </TableRow>
-                    ))}
-                  </TableBody>
-                </Table>
-              </TableContainer>
-            ) : (
-              <Typography variant="body2" color="textSecondary" component="p">
-                <Loader />
-              </Typography>
-            )}
-          </>
-        </>
+        {usersData.length > 0 ? (
+          <TableContainer component={Paper}>
+            <Table>
+              <TableHead sx={{ backgroundColor: "#aaaa", color: "white" }}>
+                <TableRow>
+                  <TableCell>Name</TableCell>
+                  <TableCell>Email</TableCell>
+                  <TableCell>Mobile</TableCell>
+                  <TableCell>Address</TableCell>
+                  <TableCell>City</TableCell>
+                  <TableCell>Gender</TableCell>
+                  <TableCell>Role</TableCell>
+                  <TableCell>Status</TableCell>
+                  <TableCell>Actions</TableCell>
+                </TableRow>
+              </TableHead>
+              <TableBody>
+                {usersData.map((user) => (
+                  <TableRow key={user._id}>
+                    <TableCell>{user.name}</TableCell>
+                    <TableCell>{user.email}</TableCell>
+                    <TableCell>{user.mobile}</TableCell>
+                    <TableCell>{user.address}</TableCell>
+                    <TableCell>{user.city}</TableCell>
+                    <TableCell>{user.gender}</TableCell>
+                    <TableCell>{user.role}</TableCell>
+                    <TableCell>
+                      {user.status === 1 ? "Active" : "Inactive"}
+                    </TableCell>
+                    <TableCell>
+                      <Button
+                        variant="outlined"
+                        onClick={() => handleStatusChange(user._id)}
+                        style={{
+                          backgroundColor: user.status === 1 ? "green" : "red",
+                          color: "white",
+                        }}>
+                        {user.status === 1 ? "Active" : "Inactive"}
+                      </Button>
+                    </TableCell>
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table>
+          </TableContainer>
+        ) : (
+          <Typography variant="body2" color="textSecondary" component="p">
+            <Loader />
+          </Typography>
+        )}
       </Grid>
     </Grid>
   );
