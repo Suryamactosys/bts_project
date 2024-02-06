@@ -13,6 +13,9 @@ const HomePage = () => {
       <Box>
         <Home />
       </Box>
+      {/* <Box>
+        <Support />
+      </Box> */}
       <Box>
         <Product />
       </Box>

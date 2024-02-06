@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import { Grid } from "@mui/material";
+import { Divider, Grid, Typography } from "@mui/material";
 import ProductCard from "./ProductCard";
 import Loader from "../../Components/Loading/Loading";
 

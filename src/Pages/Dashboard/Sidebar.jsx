@@ -18,6 +18,7 @@ import SettingsIcon from "@mui/icons-material/Settings";
 import LocalMallIcon from "@mui/icons-material/LocalMall";
 import ExitToAppIcon from "@mui/icons-material/ExitToApp";
 import AdbIcon from "@mui/icons-material/Adb";
+import HelpCenterIcon from "@mui/icons-material/HelpCenter";
 
 const Sidebar = () => {
   const [open, setOpen] = useState(false);
@@ -113,6 +114,12 @@ const Sidebar = () => {
               <LocalMallIcon />
             </ListItemIcon>
             <ListItemText primary="Product" />
+          </ListItem>
+          <ListItem component={Link} to="support">
+            <ListItemIcon>
+              <HelpCenterIcon />
+            </ListItemIcon>
+            <ListItemText primary="Support" />
           </ListItem>
           <ListItem component={Link} to="logoutpage">
             <ListItemIcon>

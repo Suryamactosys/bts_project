@@ -8,15 +8,18 @@ import Menu from "@mui/material/Menu";
 import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
 import Button from "@mui/material/Button";
-// import Avatar from "@mui/material/Avatar";
-// import Tooltip from "@mui/material/Tooltip";
+import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
 import styled from "@emotion/styled";
 import { Link } from "react-router-dom";
 
-// const pages = ["Products", "Pricing", "FAQ", "Company", "Contact"];
-// const settings = ["Profile", "Account", "Dashboard →", "Logout"];
+const settings = [
+  { id: 1, name: "Profile", link: "#" },
+  { id: 2, name: "Account", link: "#" },
+  { id: 3, name: "Dashboard", link: "#" },
+  { id: 4, name: "Logout", link: "/" },
+];
 const pages = [
   { id: 1, name: "Products", link: "/products" },
   { id: 2, name: "Pricing", link: "/pricing" },
@@ -35,7 +38,7 @@ const ColorButton = styled(Button)(() => ({
 }));
 function Header() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
-  // const [anchorElUser, setAnchorElUser] = React.useState(null);
+  const [anchorElUser, setAnchorElUser] = React.useState(null);
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -45,13 +48,13 @@ function Header() {
     setAnchorElNav(null);
   };
 
-  // const handleOpenUserMenu = (event) => {
-  //   setAnchorElUser(event.currentTarget);
-  // };
+  const handleOpenUserMenu = (event) => {
+    setAnchorElUser(event.currentTarget);
+  };
 
-  // const handleCloseUserMenu = () => {
-  //   setAnchorElUser(null);
-  // };
+  const handleCloseUserMenu = () => {
+    setAnchorElUser(null);
+  };
 
   return (
     <AppBar
@@ -111,21 +114,16 @@ function Header() {
                 {pages.map((page) => (
                   <MenuItem key={page.id} onClick={handleCloseNavMenu}>
                     <Typography sx={{ textAlign: "center" }}>
-                      {page.name}
+                      <Link
+                        to={page.link}
+                        style={{
+                          textDecoration: "none",
+                          color: "inherit",
+                        }}>
+                        {page.name}
+                      </Link>
                     </Typography>
                   </MenuItem>
-                  // <MenuItem
-                  //   onClick={handleCloseNavMenu}
-                  //   key={page.id}
-                  //   to={page.link}
-                  //   style={{
-                  //     fontSize: "1rem",
-                  //   }}
-                  //   className={({ isActive }) =>
-                  //     isActive ? "nav-link-active" : "nav-link"
-                  //   }>
-                  //   {page.name}
-                  // </MenuItem>
                 ))}
               </Menu>
             </Box>
@@ -182,47 +180,57 @@ function Header() {
                     textDecoration: "none",
                   }}>
                   Request Quote
-                </ColorButton>{" "}
-              </Link>{" "}
-              <ColorButton
-                variant="contained"
-                className="btn2"
-                sx={{
-                  backgroundColor: "white",
-                  color: "red",
-                  textDecoration: "none",
-                }}>
-                Dashboard →
-              </ColorButton>
+                </ColorButton>
+              </Link>
             </Box>
-            {/* <Box sx={{ flexGrow: 0 }}>
-            <Tooltip title="Open settings">
-              <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
-              </IconButton>
-            </Tooltip>
-            <Menu
-              sx={{ mt: "45px" }}
-              id="menu-appbar"
-              anchorEl={anchorElUser}
-              anchorOrigin={{
-                vertical: "top",
-                horizontal: "right",
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: "top",
-                horizontal: "right",
-              }}
-              open={Boolean(anchorElUser)}
-              onClose={handleCloseUserMenu}>
-              {settings.map((setting) => (
-                <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                  <Typography textAlign="center">{setting}</Typography>
-                </MenuItem>
-              ))}
-            </Menu>
-          </Box> */}
+            <Box sx={{ flexGrow: 0 }}>
+              <Tooltip title="Open settings">
+                {/* <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}> */}
+                {/* <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" /> */}
+                <ColorButton
+                  onClick={handleOpenUserMenu}
+                  // sx={{ p: 0 }}
+                  variant="contained"
+                  className="btn2"
+                  sx={{
+                    backgroundColor: "white",
+                    color: "red",
+                    textDecoration: "none",
+                    marginLeft: "5px",
+                  }}>
+                  Dashboard →
+                </ColorButton>
+                {/* </IconButton> */}
+              </Tooltip>
+              <Menu
+                sx={{ mt: "45px" }}
+                id="menu-appbar"
+                anchorEl={anchorElUser}
+                anchorOrigin={{
+                  vertical: "top",
+                  horizontal: "right",
+                }}
+                keepMounted
+                transformOrigin={{
+                  vertical: "top",
+                  horizontal: "right",
+                }}
+                open={Boolean(anchorElUser)}
+                onClose={handleCloseUserMenu}>
+                {settings.map((setting) => (
+                  <MenuItem key={setting.id} onClick={handleCloseUserMenu}>
+                    <Link
+                      to={setting.link}
+                      style={{
+                        textDecoration: "none",
+                        color: "inherit",
+                      }}>
+                      {setting.name}
+                    </Link>
+                  </MenuItem>
+                ))}
+              </Menu>
+            </Box>
           </Toolbar>
         </Container>
       </Box>

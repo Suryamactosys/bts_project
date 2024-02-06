@@ -11,6 +11,7 @@ import {
 import { Link } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { BASE_URl } from "../../api";
 
 const genders = ["male", "female", "other"];
 
@@ -37,10 +38,7 @@ const Register = () => {
     e.preventDefault();
 
     try {
-      const response = await axios.post(
-        "http://localhost:3001/user/save",
-        formData
-      );
+      const response = await axios.post(`${BASE_URl}user/save`, formData);
       console.log("API Response:", response.data);
       toast.success("Registration successful!");
 

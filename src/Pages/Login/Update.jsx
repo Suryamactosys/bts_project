@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Grid, TextField, Button, Typography, Paper } from "@mui/material";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { BASE_URl } from "../../api";
 
 const UpdateProfile = () => {
   const [formData, setFormData] = useState({
@@ -27,10 +28,7 @@ const UpdateProfile = () => {
     e.preventDefault();
 
     try {
-      const response = await axios.patch(
-        "http://localhost:3001/user/update",
-        formData
-      );
+      const response = await axios.patch(`${BASE_URl}/user/update`, formData);
       console.log("Update API Response:", response.data);
 
       navigate("/dashboard");

@@ -8,9 +8,9 @@ const Loader = () => {
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
-        height: "100vh",
+        // height: "100vh",
       }}>
-      <CircularProgress color="secondary" size={100} thickness={5} />
+      <CircularProgress color="secondary" size="lg" thickness={5} />
     </Box>
   );
 };

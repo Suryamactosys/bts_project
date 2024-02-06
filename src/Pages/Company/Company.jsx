@@ -1,15 +1,21 @@
-import { Box, Typography, Paper, Divider } from "@mui/material";
+import { Typography, Paper, Divider, Container } from "@mui/material";
 
 const Company = () => {
   return (
-    <Box sx={{ paddingTop: "100px", textAlign: "center" }}>
+    <Container sx={{ paddingTop: "100px", textAlign: "center" }}>
       <Typography variant="h2" gutterBottom>
         Company Details
       </Typography>
 
       <Paper
         elevation={3}
-        sx={{ padding: "20px", maxWidth: "600px", margin: "auto" }}>
+        sx={{
+          maxWidth: "md",
+          margin: "auto",
+          padding: "20px",
+          boxShadow: "5",
+          maxHeight: "auto",
+        }}>
         <Typography variant="h4" gutterBottom>
           Mactosys Software Technology Pvt. Ltd
         </Typography>
@@ -35,7 +41,7 @@ const Company = () => {
           <a href="mailto:info@abccompany.com">info@mactosyscompany.com</a>
         </Typography>
       </Paper>
-    </Box>
+    </Container>
   );
 };
 

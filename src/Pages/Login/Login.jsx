@@ -4,6 +4,7 @@ import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { BASE_URl } from "../../api";
 
 const Login = () => {
   const [formData, setFormData] = useState({
@@ -26,10 +27,7 @@ const Login = () => {
     e.preventDefault();
 
     try {
-      const response = await axios.post(
-        "http://localhost:3001/user/login",
-        formData
-      );
+      const response = await axios.post(`${BASE_URl}user/login`, formData);
       console.log("Login API Response:", response.data);
 
       toast.success("Login successful!");

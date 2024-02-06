@@ -15,6 +15,7 @@ import Dashboard from "./Pages/Dashboard/Dashboard";
 import UserSettings from "./Pages/Dashboard/Settings/Settings";
 import UserProfile from "./Pages/Dashboard/Profile/Profile";
 import LogoutPage from "./Pages/Login/LogoutPage";
+import Support from "./Pages/Dashboard/Support/Support";
 // import UpdateProfile from "./Pages/Login/Update";
 
 function App() {
@@ -76,6 +77,7 @@ function App() {
               <Route path="settings" element={<UserSettings />} />
               <Route path="profile" element={<UserProfile />} />
               <Route path="products" element={<Products />} />
+              <Route path="support" element={<Support />} />
               <Route path="logoutpage" element={<LogoutPage />} />
             </Route>
           </Routes>
