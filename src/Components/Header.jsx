@@ -179,7 +179,7 @@ function Header() {
                     color: "red",
                     textDecoration: "none",
                   }}>
-                  Request Quote
+                  Login
                 </ColorButton>
               </Link>
             </Box>
@@ -198,7 +198,7 @@ function Header() {
                     textDecoration: "none",
                     marginLeft: "5px",
                   }}>
-                  Dashboard →
+                  Dashboard
                 </ColorButton>
                 {/* </IconButton> */}
               </Tooltip>
